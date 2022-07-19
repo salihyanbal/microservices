@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.microservices</groupId>
-    <artifactId>mail</artifactId>
+    <artifactId>email</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mail</name>
-    <description>mail</description>
+    <name>email</name>
+    <description>email</description>
     <properties>
         <java.version>11</java.version>
     </properties>

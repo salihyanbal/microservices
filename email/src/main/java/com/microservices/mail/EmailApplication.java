@@ -5,11 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-@EnableMongoRepositories
-public class MailApplication {
+public class EmailApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MailApplication.class, args);
+        SpringApplication.run(EmailApplication.class, args);
     }
 
 }
