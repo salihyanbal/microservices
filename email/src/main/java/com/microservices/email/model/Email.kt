@@ -1,4 +1,4 @@
-package com.microservices.mail.model
+package com.microservices.email.model
 
 import org.springframework.data.mongodb.core.mapping.Document
 

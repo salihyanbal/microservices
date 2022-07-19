@@ -1,4 +1,4 @@
-package com.microservices.mail.exception;
+package com.microservices.email.exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -31,6 +31,11 @@ public class GeneralExceptionAdvisor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EmailNotFoundException.class)
     public ResponseEntity<?> emailNotFoundExceptionHandler(EmailNotFoundException exception)  {
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(VerificationCodeWrongException.class)
+    public ResponseEntity<?> verificationCodeWrongExceptionHandler(VerificationCodeWrongException exception)  {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
     }
 

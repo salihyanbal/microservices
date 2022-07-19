@@ -1,6 +1,6 @@
-package com.microservices.mail.repository;
+package com.microservices.email.repository;
 
-import com.microservices.mail.model.Email;
+import com.microservices.email.model.Email;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

@@ -1,16 +1,14 @@
-package com.microservices.mail.service;
+package com.microservices.email.service;
 
-import com.microservices.mail.dto.ChangeEmailRequest;
-import com.microservices.mail.dto.CreateEmailRequest;
-import com.microservices.mail.dto.EmailDto;
-import com.microservices.mail.dto.UpdateEmailRequest;
-import com.microservices.mail.model.Email;
+import com.microservices.email.dto.*;
+import com.microservices.email.model.Email;
 
 public interface EmailService {
 
     EmailDto createEmail(CreateEmailRequest emailRequest);
     EmailDto updateEmail(String id, UpdateEmailRequest emailRequest);
     Boolean changeEmail(String id, ChangeEmailRequest emailRequest);
+    EmailDto verifyEmail(String id, VerifyEmailRequest verifyRequest);
 
     Boolean deleteEmail(String id);
     Email getById(String id);

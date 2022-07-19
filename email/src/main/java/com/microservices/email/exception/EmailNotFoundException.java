@@ -1,4 +1,4 @@
-package com.microservices.mail.exception;
+package com.microservices.email.exception;
 
 public class EmailNotFoundException extends RuntimeException{
 

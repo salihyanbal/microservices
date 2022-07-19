@@ -1,13 +1,11 @@
-package com.microservices.mail.service.Implementation;
+package com.microservices.email.service.Implementation;
 
-import com.microservices.mail.dto.ChangeEmailRequest;
-import com.microservices.mail.dto.CreateEmailRequest;
-import com.microservices.mail.dto.EmailDto;
-import com.microservices.mail.dto.UpdateEmailRequest;
-import com.microservices.mail.exception.EmailNotFoundException;
-import com.microservices.mail.model.Email;
-import com.microservices.mail.repository.EmailRepository;
-import com.microservices.mail.service.EmailService;
+import com.microservices.email.dto.*;
+import com.microservices.email.exception.EmailNotFoundException;
+import com.microservices.email.exception.VerificationCodeWrongException;
+import com.microservices.email.model.Email;
+import com.microservices.email.repository.EmailRepository;
+import com.microservices.email.service.EmailService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,6 +48,16 @@ public class EmailServiceImpl implements EmailService {
         this.updateEmail(id, emailToChange);
         sendMail(id);
         return true;
+    }
+
+    @Override
+    public EmailDto verifyEmail(String id, VerifyEmailRequest verifyRequest) {
+        Email email = this.getById(id);
+        if(email.getCode() != verifyRequest.getCode()){
+            throw new VerificationCodeWrongException();
+        }
+        UpdateEmailRequest emailToUpdate = new UpdateEmailRequest(email.getEmailAddress(), email.getCode(), true);
+        return this.updateEmail(id, emailToUpdate);
     }
 
     @Override

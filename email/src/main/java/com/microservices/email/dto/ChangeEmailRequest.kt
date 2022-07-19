@@ -1,4 +1,4 @@
-package com.microservices.mail.dto
+package com.microservices.email.dto
 
 data class ChangeEmailRequest constructor(
         val emailAddress: String
