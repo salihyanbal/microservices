@@ -73,7 +73,7 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public Email getByEmail(String email) {
-        return this.emailRepository.findByEmail(email).orElseThrow(() -> new EmailNotFoundException());
+        return this.emailRepository.findByEmailAddress(email).orElseThrow(() -> new EmailNotFoundException());
     }
 
     public int createRandomCode(){

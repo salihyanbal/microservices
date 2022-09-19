@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+server:
+  port:
+    8091
+
+spring:
+  application:
+    name: User-Service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/microservices

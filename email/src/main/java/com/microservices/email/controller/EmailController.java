@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/email")
+@RequestMapping("")
 public class EmailController {
 
     private final EmailService emailService;
